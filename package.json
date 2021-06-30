@@ -1,0 +1,17 @@
+{
+  "name": "food_app_backend",
+  "version": "1.0.0",
+  "description": "food app backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require ts-node/register --watch-extensions ts 'test/**/*.spec.ts' -timeout 5000"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^9.0.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.4"
+  }
+}
