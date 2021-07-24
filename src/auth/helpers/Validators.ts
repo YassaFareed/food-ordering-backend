@@ -7,6 +7,20 @@ export const signupValidationRules = () => { //takes the list in array
         body('email', 'Invalid email').notEmpty().isEmail().normalizeEmail(),
         body('auth_type', 'Auth Type is required').notEmpty(),
         body('password','Password is required (min of 5 characters)')
+        .if(body('auth_type').equals('email'))
+        .notEmpty()
+        .isLength({min:5}),
+    ]
+}
+
+export const signinValidationRules = () => { //takes the list in array
+    return[
+        body('name','Name is required')
+        .notEmpty()
+        .if(body('auth_type').not().equals('email')), //if authtype is not email then name is required
+        body('email', 'Invalid email').not().isEmpty().isEmail().normalizeEmail(),
+        body('auth_type', 'Auth Type is required').notEmpty(),
+        body('password','Password is required (min of 5 characters)')//password when auth type is email 
         .notEmpty()
         .if(body('auth_type')
         .equals('email'))

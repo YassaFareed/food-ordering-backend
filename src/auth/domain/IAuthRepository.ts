@@ -6,8 +6,8 @@ export default interface IAuthRepository{
     add(
         name: string,
         email:string,
-        passwordHash:string, 
-        type:string
+        type:string,
+        passwordHash?:string  //password optional
         ): Promise<string> //this will return a string promise that will represent user id
 
 }

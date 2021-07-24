@@ -50,7 +50,11 @@
  
      //act
      const result = await sut
-       .add(user.name, user.email, user.type, user.password)
+       .add(
+         user.name,
+         user.email,
+         user.type,
+         user.password)
        .catch(() => null)
      //assert
      expect(result).to.not.be.empty
